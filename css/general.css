@@ -24,3 +24,15 @@
 	-moz-box-shadow: 0px 1px 0px #FFF;
 	-webkit-box-shadow: 0px 1px 0px #FFF;
 }
+
+#color_green{
+	color: #97b26d;
+}
+
+#color_red{
+	color: #d34168;
+}
+
+#color_blue{
+	color: #41a6da;
+}
