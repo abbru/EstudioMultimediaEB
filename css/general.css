@@ -23,7 +23,6 @@
 	box-shadow: 0px 1px 0px #FFF;
 	-moz-box-shadow: 0px 1px 0px #FFF;
 	-webkit-box-shadow: 0px 1px 0px #FFF;
-	text-align:center;
 }
 
 #color_green{
@@ -36,6 +35,18 @@
 
 #color_blue{
 	color: #41a6da;
+}
+
+#color_cele{
+	color: #b0e3e6;
+}
+
+#color_orang{
+	color: #dbb272;
+}
+
+#color_fuch{
+	color: #ad207c;
 }
 
 .slide {
