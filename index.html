@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -41,7 +42,7 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li id="showForm"><a href="#contacto">Contacto</a></li>
+                <li id="showForm"><a href="#contact-form" class="openform">Contacto</a></li>
               </ul>
             </div>
           </div>
@@ -166,7 +167,6 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-	  <a name="hola"></a>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
@@ -186,53 +186,41 @@
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
-            <div class="col-md-2 col-md-offset-10">
-
-			</div>
-			 <div class="col-md-6 col-md-offset-3">
-             <button id="showForm" class="btn btn-default">Contacto >></button></br></br>
-            </div>
-<div class="container">
-
-<div class="container">
-      <div class="col-md-6 col-md-offset-3" id="contform" style="display:none">
-      <h2>Contacto</h2>
-        <div class="col-md-8 col-md-offset-2">
-		 
-          <form action="#" role="form" method="post">
-		 <a name="contacto"></a>
-            <div class="form-group">
-              <label for="inputname" class="control-label">Nombre</label>
-              <input type="name" class="form-control input-sm" id="inputname" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-              <label for="inputphone" class="control-label">Telefono</label>
-              <input type="name" class="form-control input-sm" id="inputphone" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-              <label for="inputemail" class="control-label">E-mail</label>
-              <input type="email" class="form-control input-sm" id="inputemail" placeholder="E-mail">  
-            </div>
-            <div class="form-group">
-              <label for="inputquery" class="control-label">Consulta</label>
-              <textarea class="form-control input-sm" rows="3" id="inputquery"></textarea>
-            </div>
-            <div class="form-group col-md-offset-9">
-              <button type="submit" class="btn btn-default">Enviar</button>
-            </div>
-          </form>
+          <div class="col-md-2 col-md-offset-10">
         </div>
-      </div>
-    </div>
-      </div>
-
-
       </div>
 
       <hr class="featurette-divider">
-
+      
       <!-- /END THE FEATURETTES -->
-
+      <div class="container mfp-hide" id="contact-form">
+        <div class="col-md-6 col-md-offset-3 slide" id="contform">
+        <h2>Contacto</h2>
+          <div class="col-md-8 col-md-offset-2">
+              <form action="#" role="form" method="post">
+                <div class="form-group">
+                  <label for="inputname" class="control-label">Nombre</label>
+                  <input type="name" class="form-control input-sm" id="inputname" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <label for="inputphone" class="control-label">Telefono</label>
+                  <input type="name" class="form-control input-sm" id="inputphone" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                  <label for="inputemail" class="control-label">E-mail</label>
+                  <input type="email" class="form-control input-sm" id="inputemail" placeholder="E-mail">  
+                </div>
+                <div class="form-group">
+                  <label for="inputquery" class="control-label">Consulta</label>
+                  <textarea class="form-control input-sm" rows="3" id="inputquery"></textarea>
+                </div>
+                <div class="form-group col-md-offset-9">
+                  <button type="submit" class="btn btn-default">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
       <!-- FOOTER -->
       <footer>
@@ -250,6 +238,7 @@
     <script src="js/assets/jquery.js"></script>
     <script src="js/dist/bootstrap.min.js"></script>
     <script src="js/assets/holder.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
     <script src="js/general.js"></script>
   </body>
 </html>

@@ -36,3 +36,9 @@
 #color_blue{
 	color: #41a6da;
 }
+
+.slide {
+  background: #FFF;
+  margin: 0 auto;
+  position: relative;
+}
