@@ -38,7 +38,7 @@ if(isset($_POST['enviarForm']))
 	
 	/* Validar telefono */
 		if($phone != ""){
-		$patter_phone = '/^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/';
+		$pattern_phone = '/^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/';
 		if (preg_match($pattern_phone, $phone) === 1) {
 			echo "telefono correcto</br>";
 		}
