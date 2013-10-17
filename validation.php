@@ -5,6 +5,7 @@ if(isset($_POST['enviarForm']))
 	$name = $_POST['inputname']; 
 	$phone = $_POST['inputphone'];
 	$mail = $_POST['inputemail'];
+	$area = $_POST['inputtext'];
 	
 	/* Validar Mail */
 	if($mail != ""){
@@ -26,8 +27,16 @@ if(isset($_POST['enviarForm']))
 	//////////////////////////////////
 	
 	/* Validar nombre */
-		if($name != ""){
+	if($name != ""){
+		$pattern_name= '/^[a-zA-Z\ \']+$/';
+		if (preg_match($pattern_name, $name) === 1) {
 			echo "nombre correcto</br>";
+		}
+		else
+		{
+			$error = 1;
+			echo "nombre incorrecto</br>";			
+		}
 	}
 	else
 	{
@@ -38,20 +47,31 @@ if(isset($_POST['enviarForm']))
 	
 	/* Validar telefono */
 		if($phone != ""){
-		$pattern_phone = '/^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/';
-		if (preg_match($pattern_phone, $phone) === 1) {
-			echo "telefono correcto</br>";
-		}
-		else
-		{
-			$error=1;
-			echo "telefono incorrecto</br>";			
-		}
+			$pattern_phone = '/^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/';
+			if (preg_match($pattern_phone, $phone) === 1) {
+				echo "telefono correcto</br>";
+			}
+			else
+			{
+				$error=1;
+				echo "telefono incorrecto</br>";			
+			}
 	}
 	else
 	{
 		$error = 1;
 		echo "telefono vacio</br>";
+	}
+	//////////////////////////////////
+	
+	/* Validar textarea */
+	if($area != ""){
+		echo "texto correcto</br>";
+		}
+	else
+	{
+		$error = 1;
+		echo "texto vacio</br>";
 	}
 	//////////////////////////////////
 	
