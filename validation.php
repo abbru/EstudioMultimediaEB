@@ -76,7 +76,7 @@ if(isset($_POST['enviarForm']))
 	//////////////////////////////////
 	
 	if( $error === 0){
-	echo "mandar mail xD";
+	echo "</br>*Funcion mandar mail xD*";
 	}
 }
 ?>
