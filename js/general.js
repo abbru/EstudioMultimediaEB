@@ -14,6 +14,7 @@ $(document).ready(function(){
 	      enabled: true 
 	    }
 	  });
+	  $("#contact-form").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
 	});
 
 	$("a#go_es_mul").click(function() {
@@ -48,5 +49,6 @@ $(document).ready(function(){
 		return false;
 	})
 
+  
 	
 });

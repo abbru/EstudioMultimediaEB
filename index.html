@@ -22,6 +22,7 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -197,18 +198,18 @@
         <div class="col-md-6 col-md-offset-3 slide" id="contform">
         <h2>Contacto</h2>
           <div class="col-md-8 col-md-offset-2">
-              <form action="#" role="form" method="post">
+              <form action="#" id="contact-form" role="form" method="post">
                 <div class="form-group">
                   <label for="inputname" class="control-label">Nombre</label>
-                  <input type="name" class="form-control input-sm" id="inputname" placeholder="Nombre">
+                  <input type="text" class="form-control input-sm validate[required]" name="inputname" id="inputname" placeholder="Nombre">
                 </div>
                 <div class="form-group">
                   <label for="inputphone" class="control-label">Telefono</label>
-                  <input type="name" class="form-control input-sm" id="inputphone" placeholder="Telefono">
+                  <input type="name" class="form-control input-sm validate[required, custom[phone]]" name="inputphone" id="inputphone" placeholder="Telefono">
                 </div>
                 <div class="form-group">
                   <label for="inputemail" class="control-label">E-mail</label>
-                  <input type="email" class="form-control input-sm" id="inputemail" placeholder="E-mail">  
+                  <input type="e-mail" class="form-control input-sm validate[required, custom[email]]" name="inputemail" id="inputemail" placeholder="E-mail">  
                 </div>
                 <div class="form-group">
                   <label for="inputquery" class="control-label">Consulta</label>
@@ -239,6 +240,8 @@
     <script src="js/dist/bootstrap.min.js"></script>
     <script src="js/assets/holder.js"></script>
     <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/languaje/jquery.validationEngine-es.js"></script>
     <script src="js/general.js"></script>
   </body>
 </html>
