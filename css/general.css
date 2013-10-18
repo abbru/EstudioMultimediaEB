@@ -63,8 +63,13 @@
 	background-color: rgba(235, 235, 235, 0.80);
 	font-size: 12px;
 	display: none;
+	margin-right: 20px;
 }
 
 .back-to-top:hover {	
 	background-color: rgba(135, 135, 135, 0.50);
 }	
+
+.eb{
+	margin-top: -110px;
+}
