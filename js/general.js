@@ -47,8 +47,29 @@ $(document).ready(function(){
 		event.preventDefault();
 		$('html, body').animate({scrollTop: 0}, duration);
 		return false;
-	})
+	});
 
-  
+	$("#sendmail").click(function(event){
+	  var inputname = $('#inputname').val();
+	  var inputphone = $('#inputphone').val();
+	  var inputemail = $('#inputemail').val();
+	  var inputquery = $('#inputquery').val();
+
+	  event.preventDefault();
+	  $.ajax({
+	    url: "validation.php",
+	    data: {
+	            'inputname': inputname,
+	            'inputphone': inputphone,
+	            'inputemail': inputemail,
+	            'inputquery': inputquery
+	          },
+	    type: 'POST',
+	    success: function(datos){
+	      $('#contact-form').html(datos);
+	      $('.openform').click();
+	    }
+	  });
+	});
 	
 });
