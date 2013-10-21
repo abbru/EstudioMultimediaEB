@@ -14,7 +14,7 @@ $(document).ready(function(){
 	      enabled: true 
 	    }
 	  });
-	  $("#contact-form").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
+	  $("#form-contact").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
 	});
 
 	$("a#go_es_mul").click(function() {
