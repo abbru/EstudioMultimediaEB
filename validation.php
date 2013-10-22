@@ -71,7 +71,7 @@
 		</body>
 		</html>
 		';
-		if(mail('mail@mail.com',$titulo,$mensaje,$cabeceras)){
+		if(mail('abbrumax@gmail.com, emicam85@hotmail.com',$titulo,$mensaje,$cabeceras)){
   		$respuesta["enviado"] = 'Datos enviados correctamente';
 			$respuesta["error"] = 0;
   	} else {
