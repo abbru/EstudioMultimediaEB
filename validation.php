@@ -71,8 +71,13 @@
 		</body>
 		</html>
 		';
-		$respuesta["enviado"] = 'Datos enviados correctamente';
-		$respuesta["error"] = 0;
+		if(mail('mail@mail.com',$titulo,$mensaje,$cabeceras)){
+  		$respuesta["enviado"] = 'Datos enviados correctamente';
+			$respuesta["error"] = 0;
+  	} else {
+  		$respuesta["enviado"] = 'Se produjo un error intentelo de nuevo.';
+			$respuesta["error"] = 1;
+  	}
 		$respuesta["form"] = '
 		<div class="col-md-6 col-md-offset-3 slide" id="contform">
 			<h2>Contacto</h2>
