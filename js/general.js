@@ -1,3 +1,4 @@
+ (function($) {
 $(document).ready(function(){
 	$('.openform').click(function() {
 	  
@@ -58,6 +59,7 @@ $(document).ready(function(){
 	  event.preventDefault();
 	  $.ajax({
 	    url: "validation.php",
+	    dataType: "json",
 	    data: {
 	            'inputname': inputname,
 	            'inputphone': inputphone,
@@ -66,11 +68,18 @@ $(document).ready(function(){
 	          },
 	    type: 'POST',
 	    success: function(datos){
-	      $('#contact-form').html(datos);
-	      $('.openform').click();
-	      console.log(datos);
+
+	      console.log(datos.name);
+	      $('#inputname').removeClass('error');
+	      if(datos.error == 0){
+	      	$('#wapper-form').html(datos.enviado);
+	      }else if(datos.error == 1){
+	      	if(typeof datos.name !== undefined){
+	      		$('#inputname').addClass('error');
+	      	}
+	      }
 	    }
 	  });
 	});
-	
 });
+})(jQuery);
