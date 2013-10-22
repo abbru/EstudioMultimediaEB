@@ -74,6 +74,8 @@
 		$respuesta["enviado"] = 'Datos enviados correctamente';
 		$respuesta["error"] = 0;
 		$respuesta["form"] = '
+		<div class="col-md-6 col-md-offset-3 slide" id="contform">
+		 <h2>Contacto</h2>
           <div id="wapper-form" class="col-md-8 col-md-offset-2">
               <form action="" id="form-contact" role="form" method="post">
                 <div class="form-group">
@@ -94,11 +96,11 @@
                 </div>
                 <div class="form-group col-md-offset-9">
                   <button type="submit" class="btn btn-default" id="sendmail">Enviar</button>
-                </div>
-				<div id="error"></div>
+                </div>				
               </form>
-              <div id="errores"></div>
+			<div id="error"></div>
             </div>
+          </div>
 		';
 		echo json_encode($respuesta);
 	}else{
