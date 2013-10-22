@@ -68,22 +68,15 @@
 		          },
 		    type: 'POST',
 		    success: function(datos){
-
-		      console.log(datos.name);
-		      $('#inputname').removeClass('error');
 		      if(datos.error == 0){
 			    	$('#contact-form').html(datos.form);
 		      	$('#error').html(datos.enviado);
 						$('#form-contact').each (function(){
 				  		this.reset();
 						});
-		      } else if(datos.error == 1) {
-	      		if(typeof datos.name !== undefined){
-	      			$('#inputname').addClass('error');
-	      		}
-		      }
-		    }
-		  });
-		});
+		      } 
+	      }
+	    });
+	  });
 	});
 })(jQuery);
