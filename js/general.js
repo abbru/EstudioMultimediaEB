@@ -72,7 +72,8 @@ $(document).ready(function(){
 	      console.log(datos.name);
 	      $('#inputname').removeClass('error');
 	      if(datos.error == 0){
-	      	$('#wapper-form').html(datos.enviado);
+		    $('#wapper-form').html(datos.form);
+	      	$('#error').html(datos.enviado);
 	      }else if(datos.error == 1){
 	      	if(typeof datos.name !== undefined){
 	      		$('#inputname').addClass('error');

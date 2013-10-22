@@ -73,8 +73,36 @@
 		';
 		$respuesta["enviado"] = 'Datos enviados correctamente';
 		$respuesta["error"] = 0;
+		$respuesta["form"] = '
+          <div id="wapper-form" class="col-md-8 col-md-offset-2">
+              <form action="" id="form-contact" role="form" method="post">
+                <div class="form-group">
+                  <label for="inputname" class="control-label">Nombre</label>
+                  <input type="text" class="form-control input-sm validate[required, custom[onlyLetterSp]]" name="inputname" id="inputname" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <label for="inputphone" class="control-label">Telefono</label>
+                  <input type="name" class="form-control input-sm validate[required, custom[phone]]" name="inputphone" id="inputphone" placeholder="Telefono">
+                </div>
+                <div class="form-group">
+                  <label for="inputemail" class="control-label">E-mail</label>
+                  <input type="e-mail" class="form-control input-sm validate[required, custom[email]]" name="inputemail" id="inputemail" placeholder="E-mail">  
+                </div>
+                <div class="form-group">
+                  <label for="inputquery" class="control-label">Consulta</label>
+                  <textarea class="form-control input-sm validate[required]" rows="3" id="inputquery"></textarea>
+                </div>
+                <div class="form-group col-md-offset-9">
+                  <button type="submit" class="btn btn-default" id="sendmail">Enviar</button>
+                </div>
+				<div id="error"></div>
+              </form>
+              <div id="errores"></div>
+            </div>
+		';
 		echo json_encode($respuesta);
 	}else{
 		echo json_encode($error);
 	}
 ?>
+
