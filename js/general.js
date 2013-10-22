@@ -14,7 +14,7 @@ $(document).ready(function(){
 	      enabled: true 
 	    }
 	  });
-	  $("#form-contact").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
+  	$("#form-contact").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
 	});
 
 	$("a#go_es_mul").click(function() {
@@ -49,7 +49,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$("#sendmail").click(function(event){
+	$("#sendmail").on('click', function(event){
 	  var inputname = $('#inputname').val();
 	  var inputphone = $('#inputphone').val();
 	  var inputemail = $('#inputemail').val();
@@ -68,6 +68,7 @@ $(document).ready(function(){
 	    success: function(datos){
 	      $('#contact-form').html(datos);
 	      $('.openform').click();
+	      console.log(datos);
 	    }
 	  });
 	});
