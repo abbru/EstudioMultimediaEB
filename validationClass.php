@@ -3,43 +3,52 @@
 	
 class validation
 {
-	public function __construct() {
-      
+
+	public $name = "";
+	public $phone = "";
+	public $mail = "";
+	public $inputquery = "";
+
+	public function __construct($inputname, $inputphone, $inputmail, $query) {
+		$this->name = $inputname;
+		$this->phone = $inputphone;
+		$this->mail = $inputmail;
+		$this->inputquery = $query;
   }
 
-  public function validName($name) {
+  public function validName() {
 
-  	if($name != "") {
+  	if($this->name != "") {
 			$pattern_name= '/^[a-zA-Z\ \']+$/';
-			if (preg_match($pattern_name, $name) === 1) {
+			if (preg_match($pattern_name, $this->name) === 1) {
 				$error["error"] = 0;
-				$error["name"] = "name";
+				$error["enviado"] = "name";
 			} else {
 				$error["error"] = 1;
-				$error["name"] = "name";
+				$error["enviado"] = "name";
 			}
 		} else {
 			$error["error"] = 1;
-			$error["name"] = "name";
+			$error["enviado"] = "name";
 		}
 
 		return $error;
   }
 
-  public function validPhone($phone) {
+  public function validPhone() {
 
-  	if($phone != "") {
+  	if($this->phone != "") {
 			$pattern_phone = '/^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$/';
-			if (preg_match($pattern_phone, $phone) === 1) {
+			if (preg_match($pattern_phone, $this->phone) === 1) {
 				$error["error"] = 0;
-				$error["phone"] = "phone";
+				$error["enviado"] = "phone";
 			} else{
 				$error["error"] = 1;
-				$error["phone"] = "phone";
+				$error["enviado"] = "phone";
 			}
 		} else {
 			$error["error"] = 1;
-			$error["phone"] = "phone";
+			$error["enviado"] = "phone";
 		}
 
 		return $error;
@@ -48,18 +57,18 @@ class validation
 
   public function validMail(){
 
-  	if($mail != ""){
+  	if($this->mail != ""){
 			$pattern_mail = '/^(?!(?:(?:\\x22?\\x5C[\\x00-\\x7E]\\x22?)|(?:\\x22?[^\\x5C\\x22]\\x22?)){255,})(?!(?:(?:\\x22?\\x5C[\\x00-\\x7E]\\x22?)|(?:\\x22?[^\\x5C\\x22]\\x22?)){65,}@)(?:(?:[\\x21\\x23-\\x27\\x2A\\x2B\\x2D\\x2F-\\x39\\x3D\\x3F\\x5E-\\x7E]+)|(?:\\x22(?:[\\x01-\\x08\\x0B\\x0C\\x0E-\\x1F\\x21\\x23-\\x5B\\x5D-\\x7F]|(?:\\x5C[\\x00-\\x7F]))*\\x22))(?:\\.(?:(?:[\\x21\\x23-\\x27\\x2A\\x2B\\x2D\\x2F-\\x39\\x3D\\x3F\\x5E-\\x7E]+)|(?:\\x22(?:[\\x01-\\x08\\x0B\\x0C\\x0E-\\x1F\\x21\\x23-\\x5B\\x5D-\\x7F]|(?:\\x5C[\\x00-\\x7F]))*\\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-+[a-z0-9]+)*\\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-+[a-z0-9]+)*)|(?:\\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\\]))$/iD';
-			if (preg_match($pattern_mail, $mail) === 1) {
+			if (preg_match($pattern_mail, $this->mail) === 1) {
 				$error["error"] = 0;
-				$error["mail"] = "mail";
+				$error["enviado"] = "mail";
 			} else {
 				$error["error"] = 1;
-				$error["mail"] = "mail";
+				$error["enviado"] = "mail";
 			}
 		} else {
 			$error["error"] = 1;
-			$error["mail"] = "mail";
+			$error["enviado"] = "mail";
 		}
 
 		return $error;
@@ -68,12 +77,12 @@ class validation
 
   public function validTextarea(){
 
-  	if(isset($inputquery]) || $inputquery !== "") {
+  	if(isset($this->inputquery) && $this->inputquery !== "") {
   		$error["error"] = 0;
-			$error["textarea"] = "textarea";
+			$error["enviado"] = "textarea";
 		}else{
 			$error["error"] = 1;
-			$error["textarea"] = "textarea";
+			$error["enviado"] = "textarea";
 		}
 
 		return $error;
@@ -81,14 +90,14 @@ class validation
   }
 
   public function sendMail(){
-  	$title = 'Consulta : ' . $name;
+  	$title = 'Consulta : ' . $this->name;
   	$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: '.$mail. "\r\n";
+		$headers .= 'From: '.$this->mail. "\r\n";
 		$message = '
 		<html>
 		<body>
-		  <p><strong>Nombre:</strong> '.$name.'<br/> <strong>Telefono:</strong> '.$phone.' <br/><strong>Mensaje:</strong>' . $inputquery . '</p>
+		  <p><strong>Nombre:</strong> '.$this->name.'<br/> <strong>Telefono:</strong> '.$this->phone.' <br/><strong>Mensaje:</strong>' . $this->inputquery . '</p>
 		</body>
 		</html>
 		';
