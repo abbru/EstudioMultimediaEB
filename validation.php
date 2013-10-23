@@ -61,14 +61,14 @@
 
 	
 	if( $error === 0) {
-		$titulo = "Consulta: " . $name 
+		$titulo = "Consulta: " . $name ;
 		$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 		$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		$cabeceras .= 'From: '.$mail. "\r\n";
 		$mensaje = '
 		<html>
 		<body>
-		  <p><strong>Nombre:</strong> '.$name.'<br/> <strong>Telefono:</strong> '.$phone.' <br/><strong>Mensaje:</strong> '.$_POST['inputquery'].'</p>
+		  <p><strong>Nombre:</strong> '.$name.'<br/> <strong>Telefono:</strong> '.$phone.' <br/><strong>Mensaje:</strong>'.$_POST['inputquery'].'</p>
 		</body>
 		</html>
 		';
@@ -100,7 +100,7 @@
               <label for="inputquery" class="control-label">Consulta</label>
               <textarea class="form-control input-sm validate[required]" rows="3" id="inputquery"></textarea>
             </div>
-            <div class="form-group col-md-offset-6">
+            <div class="form-group col-md-offset-9">
               <button type="submit" class="btn btn-default" id="sendmail">Enviar</button>
             </div>				
           </form>
