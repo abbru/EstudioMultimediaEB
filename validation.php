@@ -72,7 +72,8 @@
 		</body>
 		</html>
 		';
-		if(mail('abbrumax@gmail.com, emicam85@hotmail.com',$titulo,$mensaje,$cabeceras)){
+		$aa = 1;
+		if(/* mail('abbrumax@gmail.com, emicam85@hotmail.com',$titulo,$mensaje,$cabeceras) */ $aa==1){
   		$respuesta["enviado"] = 'Datos enviados correctamente';
 			$respuesta["error"] = 0;
   	} else {
@@ -80,33 +81,17 @@
 			$respuesta["error"] = 1;
   	}
 		$respuesta["form"] = '
-		<div class="col-md-6 col-md-offset-3 slide" id="contform">
-			<h2>Contacto</h2>
-      <div id="wapper-form" class="col-md-8 col-md-offset-2">
-          <form action="" id="form-contact" role="form" method="post">
-            <div class="form-group">
-              <label for="inputname" class="control-label">Nombre</label>
-              <input type="text" class="form-control input-sm validate[required, custom[onlyLetterSp]]" name="inputname" id="inputname" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-              <label for="inputphone" class="control-label">Telefono</label>
-              <input type="name" class="form-control input-sm validate[required, custom[phone]]" name="inputphone" id="inputphone" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-              <label for="inputemail" class="control-label">E-mail</label>
-              <input type="e-mail" class="form-control input-sm validate[required, custom[email]]" name="inputemail" id="inputemail" placeholder="E-mail">  
-            </div>
-            <div class="form-group">
-              <label for="inputquery" class="control-label">Consulta</label>
-              <textarea class="form-control input-sm validate[required]" rows="3" id="inputquery"></textarea>
-            </div>
-            <div class="form-group col-md-offset-9">
-              <button type="submit" class="btn btn-default" id="sendmail">Enviar</button>
-            </div>				
-          </form>
-				<div id="error"></div>
-      </div>
-    </div>
+			<div id="cont_left_form">
+				<h1>Enhorabuena!</h1>
+				<div id="error_form"></div>	
+			</div>	
+			<div class="form-group col-md-offset-7">
+				<img class="img-responsive" src="images/check.PNG" alt="Responsive image">
+			</div>
+            <div class="form-group col-md-offset-5">
+				<button class="btn btn-large btn-primary" id="ok_button">Ok</button>
+            </div>			
+				
 		';
 		echo json_encode($respuesta);
 	}else{

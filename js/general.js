@@ -69,8 +69,8 @@
 		    type: 'POST',
 		    success: function(datos){
 		      if(datos.error == 0){
-			    	$('#contact-form').html(datos.form);
-		      	$('#error').html(datos.enviado);
+			    $('#form-contact').html(datos.form);
+		      	$('#error_form').html(datos.enviado);
 						$('#form-contact').each (function(){
 				  		this.reset();
 						});
